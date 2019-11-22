@@ -17,6 +17,11 @@ describe("js-ro-normalize-diacritics", () => {
 
     it("should convert upper case 's' with cedilla to comma", () => {
       assert.equal(normalizeDiacritics("Şarpe"), "Șarpe");
-    })
+    });
+
+    it("should not affect correct diacritics", () => {
+      const text = "Aștept să vină primăvara.";
+      assert.equal(normalizeDiacritics(text), text);
+    });
   });
 });
