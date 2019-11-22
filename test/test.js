@@ -20,8 +20,12 @@ describe("js-ro-normalize-diacritics", () => {
     });
 
     it("should not affect correct diacritics", () => {
-      const text = "Aștept să vină primăvara.";
+      const text = "Atept să vină primăvara.";
       assert.equal(normalizeDiacritics(text), text);
+    });
+
+    it("should convert multiple diacritics", () => {
+      assert.equal(normalizeDiacritics("Aştept să vină primăvara şi vremea bună."), "Aștept să vină primăvara și vremea bună.");
     });
   });
 });
