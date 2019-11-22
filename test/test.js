@@ -27,5 +27,9 @@ describe("js-ro-normalize-diacritics", () => {
     it("should convert multiple diacritics", () => {
       assert.equal(normalizeDiacritics("Aştept să vină primăvara şi vremea bună."), "Aștept să vină primăvara și vremea bună.");
     });
+
+    it("should support empty strings", () => {
+      assert.equal(normalizeDiacritics(""), "");
+    });
   });
 });
