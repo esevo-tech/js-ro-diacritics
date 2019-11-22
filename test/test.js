@@ -14,5 +14,9 @@ describe("js-ro-normalize-diacritics", () => {
     it("should convert lower case 's' with cedilla to comma", () => {
       assert.equal(normalizeDiacritics("peştera"), "peștera");
     });
+
+    it("should convert upper case 's' with cedilla to comma", () => {
+      assert.equal(normalizeDiacritics("Şarpe"), "Șarpe");
+    })
   });
 });
