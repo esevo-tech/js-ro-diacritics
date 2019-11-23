@@ -19,6 +19,14 @@ describe("js-ro-normalize-diacritics", () => {
       assert.equal(normalizeDiacritics("Şarpe"), "Șarpe");
     });
 
+    it("should convert lower case 'a' with tilde to breve", () => {
+      assert.equal(normalizeDiacritics("apã"), "apă");
+    });
+
+    it("should convert upper case 'A' with tilde to breve", () => {
+      assert.equal(normalizeDiacritics("Ãsta"), "Ăsta")
+    });
+
     it("should not affect correct diacritics", () => {
       const text = "Atept să vină primăvara.";
       assert.equal(normalizeDiacritics(text), text);
