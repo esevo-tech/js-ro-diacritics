@@ -1,8 +1,8 @@
 {
-  "name": "js-ro-normalize-diacritics",
+  "name": "js-ro-diacritics",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
