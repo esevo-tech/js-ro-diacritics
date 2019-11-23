@@ -1,8 +1,9 @@
 const assert = require("assert");
 const normalizeDiacritics = require("../lib/index").normalize;
+const stripDiacritics = require("../lib/index").strip;
 
-describe("js-ro-normalize-diacritics", () => {
-  describe("#normalize-diacritics", () => {
+describe("js-ro-diacritics", () => {
+  describe("#normalize", () => {
     it("should convert lower case 't' with cedilla to comma", () => {
       assert.equal(normalizeDiacritics("ţara"), "țara");
     });
@@ -39,5 +40,13 @@ describe("js-ro-normalize-diacritics", () => {
     it("should support empty strings", () => {
       assert.equal(normalizeDiacritics(""), "");
     });
+  });
+
+  describe("strip", () => {
+    it("should strip lower-case official diacritics", () => {
+      assert.equal(
+        stripDiacritics("înainte, să, țintă, șarpe, cânepă"),
+        "inainte, sa, tinta, sarpe, canepa");
+    })
   });
 });
