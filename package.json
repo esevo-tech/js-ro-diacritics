@@ -1,7 +1,7 @@
 {
   "name": "js-ro-diacritics",
   "version": "1.0.0",
-  "description": "",
+  "description": "Functions for manipulating diacritics within a Romanian text (converting bad characters, stripping diacritics)",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib",
@@ -10,9 +10,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Elian Doran <elian@esevo.ro>",
+  "license": "UNLICENSED",
   "devDependencies": {
     "mocha": "^6.2.2"
-  }
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esevo-tech/js-ro-diacritics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/esevo-tech/js-ro-diacritics/issues"
+  },
+  "homepage": "https://github.com/esevo-tech/js-ro-diacritics#readme"
 }
