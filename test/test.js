@@ -54,5 +54,11 @@ describe("js-ro-diacritics", () => {
         stripDiacritics("Înainte, Ăla, Ținta, Șarpe, cÂnepă"),
         "inainte, ala, tinta, sarpe, canepa");
     });
+
+    it("should strip S and T with cedilla", () => {
+      assert.equal(
+        stripDiacritics("Şarpe, şarpe, Ţara, ţara"),
+        "sarpe, sarpe, tara, tara");
+    })
   });
 });
