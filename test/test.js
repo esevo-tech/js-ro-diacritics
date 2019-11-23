@@ -42,7 +42,7 @@ describe("js-ro-diacritics", () => {
     });
   });
 
-  describe("strip", () => {
+  describe("#strip", () => {
     it("should strip lower-case official diacritics", () => {
       assert.equal(
         stripDiacritics("înainte, să, țintă, șarpe, cânepă"),
@@ -51,14 +51,20 @@ describe("js-ro-diacritics", () => {
 
     it("should strip upper-case official diacritics", () => {
       assert.equal(
-        stripDiacritics("Înainte, Ăla, Ținta, Șarpe, cÂnepă"),
-        "inainte, ala, tinta, sarpe, canepa");
+        stripDiacritics("Înainte, Ăla, Ținta, Șarpe, CÂNEPĂ"),
+        "Inainte, Ala, Tinta, Sarpe, CANEPA");
     });
 
     it("should strip S and T with cedilla", () => {
       assert.equal(
-        stripDiacritics("Şarpe, şarpe, Ţara, ţara"),
-        "sarpe, sarpe, tara, tara");
-    })
+        stripDiacritics("Şarpe, şarpe, ŢARA, ţara"),
+        "Sarpe, sarpe, TARA, tara");
+    });
+
+    it("should strip A with tilde", () => {
+      assert.equal(
+        stripDiacritics("MÃR, mãr"),
+        "MAR, mar");
+    });
   });
 });
