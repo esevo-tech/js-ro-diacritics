@@ -1,5 +1,5 @@
 const assert = require("assert");
-const normalizeDiacritics = require("../lib/index");
+const normalizeDiacritics = require("../lib/index").normalize;
 
 describe("js-ro-normalize-diacritics", () => {
   describe("#normalize-diacritics", () => {
