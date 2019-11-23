@@ -47,6 +47,12 @@ describe("js-ro-diacritics", () => {
       assert.equal(
         stripDiacritics("înainte, să, țintă, șarpe, cânepă"),
         "inainte, sa, tinta, sarpe, canepa");
-    })
+    });
+
+    it("should strip upper-case official diacritics", () => {
+      assert.equal(
+        stripDiacritics("Înainte, Ăla, Ținta, Șarpe, cÂnepă"),
+        "inainte, ala, tinta, sarpe, canepa");
+    });
   });
 });
